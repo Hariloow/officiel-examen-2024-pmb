@@ -2,7 +2,6 @@ package ca.ulaval.glo4002.pmb;
 
 import java.util.Objects;
 
-// Vous pouvez modifier cette classe
 public class NumeroClient {
     public static NumeroClient creer(int numero) {
         return new NumeroClient(numero);

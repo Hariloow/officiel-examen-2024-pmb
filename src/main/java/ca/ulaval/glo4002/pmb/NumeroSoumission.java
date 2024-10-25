@@ -3,7 +3,6 @@ package ca.ulaval.glo4002.pmb;
 import java.util.Objects;
 import java.util.UUID;
 
-// Vous pouvez modifier cette classe
 public class NumeroSoumission {
     public static NumeroSoumission creer(String numero) {
         return new NumeroSoumission(numero);
