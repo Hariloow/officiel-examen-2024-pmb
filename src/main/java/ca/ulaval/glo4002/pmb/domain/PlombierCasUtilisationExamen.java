@@ -10,15 +10,20 @@ import ca.ulaval.glo4002.pmb.ne_pas_modifier.Quincaillerie;
 public class PlombierCasUtilisationExamen {
     private final Quincaillerie quincaillerie;
     private final EnvoyeurCourriel envoyeurCourriel;
+    private final ClientDomainFactory clientDomainFactory;
 
-    public PlombierCasUtilisationExamen(Quincaillerie quincaillerie, EnvoyeurCourriel envoyeurCourriel) {
+    public PlombierCasUtilisationExamen(
+      Quincaillerie quincaillerie,
+      EnvoyeurCourriel envoyeurCourriel,
+      ClientDomainFactory clientDomainFactory
+    ) {
         this.quincaillerie = quincaillerie;
         this.envoyeurCourriel = envoyeurCourriel;
+        this.clientDomainFactory = clientDomainFactory;
     }
 
     public Client creerClient(int numeroClient, String nom, TypeClient type, String email) {
-        // TODO
-        return null; // TODO
+        return clientDomainFactory.creerClient(numeroClient, nom, type, email);
     }
 
     public NumeroSoumission creerSoumission(int numeroClient, float heures, List<CodeMateriel> materiels) {
