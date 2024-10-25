@@ -1,4 +1,4 @@
-package ca.ulaval.glo4002.pmb.domain;
+package ca.ulaval.glo4002.pmb.domain.client;
 
 import java.util.Objects;
 

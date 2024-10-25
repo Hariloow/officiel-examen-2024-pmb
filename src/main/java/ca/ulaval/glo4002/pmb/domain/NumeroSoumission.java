@@ -1,4 +1,4 @@
-package ca.ulaval.glo4002.pmb;
+package ca.ulaval.glo4002.pmb.domain;
 
 import java.util.Objects;
 import java.util.UUID;
