@@ -15,14 +15,18 @@ public class PlombierCasUtilisationExamen {
     private final Quincaillerie quincaillerie;
     private final EnvoyeurCourriel envoyeurCourriel;
     private List<Client> clientList;
+    private PrixFacturationClient facturationClient;
 
     public PlombierCasUtilisationExamen(
       Quincaillerie quincaillerie,
-      EnvoyeurCourriel envoyeurCourriel
+      EnvoyeurCourriel envoyeurCourriel,
+      int prixFacturationClientResidentiel,
+      int prixFacturationClientCommercial
     ) {
         this.quincaillerie = quincaillerie;
         this.envoyeurCourriel = envoyeurCourriel;
         this.clientList = new ArrayList<>();
+        facturationClient = new PrixFacturationClient(prixFacturationClientResidentiel, prixFacturationClientCommercial);
     }
 
     public Client creerClient(int numeroClient, String nom, TypeClient type, String email) {
@@ -35,8 +39,9 @@ public class PlombierCasUtilisationExamen {
     }
 
     public NumeroSoumission creerSoumission(int numeroClient, float heures, List<CodeMateriel> materiels) {
-        // TODO
-        return null; // TODO
+        Submission soumission = new Submission(numeroClient, heures, materiels, facturationClient);
+
+        return soumission.getNumeroSoumission();
     }
 
     public void envoyerSoumission(int numeroClient, String numeroSoumission) {

@@ -10,7 +10,8 @@ public class ClientSQLStorage implements ClientRepository {
     }
 
     @Override
-    public void getClient(int numeroClient) {
+    public Client getClient(int numeroClient) {
         // TODO
+        return null;
     }
 }

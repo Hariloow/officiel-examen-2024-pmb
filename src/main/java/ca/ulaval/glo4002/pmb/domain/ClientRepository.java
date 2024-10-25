@@ -5,5 +5,5 @@ import ca.ulaval.glo4002.pmb.domain.client.Client;
 public interface ClientRepository {
     void storeClient(Client client);
 
-    void getClient(int numeroClient);
+    Client getClient(int numeroClient);
 }
